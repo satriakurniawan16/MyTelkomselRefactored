@@ -4,7 +4,7 @@ import com.squareup.moshi.Json
 
 data class FaqResponseModel(
     @field:Json(name = "id")
-    val id: LangId,
+    val id: LangIdModel,
     @field:Json(name = "en")
-    val en: LangEn
+    val en: LangEnModel
 )

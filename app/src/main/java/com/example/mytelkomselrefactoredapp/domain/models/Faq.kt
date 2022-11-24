@@ -1,6 +1,7 @@
 package com.example.mytelkomselrefactoredapp.domain.models
 
-class Faq {
-    val id: Lan,
 
-}
+data class Faq (
+    val id: LangId,
+    val en: LangEn,
+)

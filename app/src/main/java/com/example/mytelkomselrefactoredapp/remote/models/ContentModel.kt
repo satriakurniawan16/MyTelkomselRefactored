@@ -1,6 +1,6 @@
 package com.example.mytelkomselrefactoredapp.remote.models
 
-data class Topic(
+data class ContentModel(
     val id: String,
     val title: String
 )

@@ -1,4 +1,8 @@
 package com.example.mytelkomselrefactoredapp.remote.mappers
 
-class FaqLangEntityMapper {
+import com.example.mytelkomselrefactoredapp.remote.models.LangEnModel
+import com.example.mytelkomselrefactoredapp.remote.models.LangIdModel
+import javax.inject.Inject
+
+class FaqLangEntityMapper @Inject constructor(): EntityMapper<LangEnModel,LangIdModel> {
 }
