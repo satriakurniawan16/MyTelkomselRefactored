@@ -10,15 +10,15 @@ class LangIdMapper @Inject constructor(
 ) : Mapper<LangIdEntity, LangId> {
     override fun mapFromEntity(type: LangIdEntity): LangId {
         return LangId(
-            content = contentMapper.mapFromEntity(type.content),
-            topic = topicMapper.mapFromEntity(type = type.topic)
+            content = type.content.map {  contentMapper.mapFromEntity(it)},
+            topic = type.topic.map {topicMapper.mapFromEntity(it)}
         )
     }
 
     override fun mapToEntity(type: LangId): LangIdEntity {
         return LangIdEntity(
-            content = contentMapper.mapToEntity(type = type.content),
-            topic = topicMapper.mapToEntity(type = type.topic)
+            content = type.content.map { contentMapper.mapToEntity(it)},
+            topic = type.topic.map { topicMapper.mapToEntity(it) }
         )
     }
 

@@ -7,8 +7,8 @@ import javax.inject.Inject
 class FaqEntityMapper @Inject constructor (private val langEntityMapper: FaqLangEntityMapper,private val langIdEntityMapper: FaqLangIdEntityMapper):EntityMapper<FaqResponseModel,FaqEntity>{
     override fun mapFromModel(model: FaqResponseModel): FaqEntity {
         return FaqEntity(
-            id = langEntityMapper,
-            en =
+            id = langIdEntityMapper.mapFromModel(model.id),
+            en = langEntityMapper.mapFromModel(model.en)
         )
     }
 }

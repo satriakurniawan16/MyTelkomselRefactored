@@ -1,7 +1,10 @@
 package com.example.mytelkomselrefactoredapp.presentation.viewmodel
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import com.example.mytelkomselrefactoredapp.domain.interactor.GetAllTranslationUseCase
+import com.example.mytelkomselrefactoredapp.domain.interactor.GetFaqUseCase
+import com.example.mytelkomselrefactoredapp.domain.models.Faq
 import com.example.mytelkomselrefactoredapp.presentation.utils.CoroutineContextProvider
 import com.example.mytelkomselrefactoredapp.presentation.utils.StatefulLiveData
 import com.example.mytelkomselrefactoredapp.util.ExceptionHandler
@@ -13,17 +16,42 @@ import kotlinx.coroutines.flow.collect
 @HiltViewModel
 class WCMSViewModel @Inject constructor(
     contextProvider: CoroutineContextProvider,
-    private val getAllTranslationUseCase: GetAllTranslationUseCase
+    private val getAllTranslationUseCase: GetAllTranslationUseCase,
+    private val getFaqUseCase: GetFaqUseCase,
 ) : BaseViewModel(contextProvider) {
+
     private val _translation = StatefulLiveData<StatefulResult<String>>()
     private val translation: LiveData<StatefulResult<String>> = _translation
+
+    private val _faq = StatefulLiveData<StatefulResult<Faq>>()
+    private val faq: LiveData<StatefulResult<Faq>> = _faq
 
     fun getTranslation(): LiveData<StatefulResult<String>> {
         return translation
     }
 
-    override val coroutineExceptionHandler = CoroutineExceptionHandler { _, exception ->
+    fun getFaq(): LiveData<StatefulResult<Faq>>{
+        return faq
+    }
+
+
+    override val coroutineExceptionHandler = CoroutineExceptionHandler { data, exception ->
+        Log.d("MAMALOL", "${data.toString()}")
         _translation.postValue(StatefulResult.Failed(exception.message ?: ""))
+//        _faq.postValue(StatefulResult.Failed(exception.message ?: ""))
+    }
+
+    fun getFaqData(){
+        _faq.postValue(StatefulResult.Loading)
+        launchCoroutineIO {
+            loadFaq()
+        }
+    }
+
+    private suspend fun loadFaq(){
+        getFaqUseCase(Unit).collect() {
+            _faq.postValue(StatefulResult.Success(it))
+        }
     }
 
     fun getTranslations() {

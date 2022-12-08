@@ -27,6 +27,18 @@ object appDep {
         Dependencies.DaggerHiltDep.hiltAndroid
     )
 
+    val retrofit = listOf(
+        Dependencies.RetrofitDep.gson,
+        Dependencies.RetrofitDep.gsonConverter,
+        Dependencies.RetrofitDep.retrofit,
+        Dependencies.RetrofitDep.moshiConverter,
+    )
+
+    val okhttp = listOf(
+        Dependencies.RetrofitDep.loggingInterceptor,
+        Dependencies.RetrofitDep.scalarsConverterConverter
+    )
+
     //Hilt Api
     val DaggerHiltApi = listOf(
         Dependencies.DaggerAndroidDep.daggerAndroid,

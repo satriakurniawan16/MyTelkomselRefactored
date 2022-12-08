@@ -9,13 +9,10 @@ object Config {
     }
 
     object ClassPaths {
-        const val androidGradle = "com.android.tools.build:gradle:4.2.1"
-        const val kotlinGradle =
-            "org.jetbrains.kotlin:kotlin-gradle-plugin:1.5.20"
-        const val daggerHiltGradle =
-            "com.google.dagger:hilt-android-gradle-plugin:${Versions.hiltAndroidVersion}"
-        const val navigationSafArgsGradle =
-            "androidx.navigation:navigation-safe-args-gradle-plugin:${Versions.gradleNavigationArgVersion}"
+        const val androidGradle = "com.android.tools.build:gradle:${Versions.gradleVersion}"
+        const val kotlinGradle = "org.jetbrains.kotlin:kotlin-gradle-plugin:${Versions.kotlinVersion}"
+        const val daggerHiltGradle = "com.google.dagger:hilt-android-gradle-plugin:${Versions.hiltAndroidVersion}"
+        const val navigationSafArgsGradle = "androidx.navigation:navigation-safe-args-gradle-plugin:${Versions.gradleNavigationArgVersion}"
         const val ktLint ="org.jlleitschuh.gradle:ktlint-gradle:${Versions.ktLintVersion}"
 
         const val jitPackUrl = "https://jitpack.io"
@@ -35,7 +32,9 @@ object Config {
         const val kotlinAndroid = "kotlin-android"
         const val navigationSafArgs = "androidx.navigation.safeargs.kotlin"
         const val kotlinKapt = "kotlin-kapt"
+        const val daggerHiltPlugins = "dagger.hilt.android.plugin"
         const val androidLibrary = "com.android.library"
+        const val kotlinParcelize = "kotlin-parcelize"
     }
 
     const val testRunner = "androidx.test.runner.AndroidJUnitRunner"

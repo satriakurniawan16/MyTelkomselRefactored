@@ -1,15 +1,15 @@
 object Versions {
 
-    const val gradleVersion = "4.2.1"
+    const val gradleVersion = "4.2.2"
     const val gradleNavigationArgVersion = "2.3.5"
-    const val kotlinVersion = "1.5.10"
+    const val kotlinVersion = "1.7.20"
     const val ktLintVersion = "10.1.0"
     const val androidApplicationVersion = "7.2.2"
     const val androidLibraryVersion = "7.2.2"
 
     // Core dependencies
     const val javaxInjectVersion = "1"
-    const val coreKtxVersion = "1.3.2"
+    const val coreKtxVersion = "1.9.0"
     const val appCompatVersion = "1.2.0"
     const val materialVersion = "1.3.0"
     const val constraintLayoutVersion = "2.0.4"
@@ -43,15 +43,18 @@ object Versions {
 
     // Dagger - Hilt dependencies
     const val hiltAndroidVersion = "2.42"
-    const val hiltVersion = "1.0.0-alpha02"
+    const val hiltVersion = "1.0.0"
 
     // Timber logging dependencies
     const val timberVersion = "4.7.1"
 
     // Network dependencies
-    const val retrofitVersion = "2.7.0"
+    const val retrofitVersion = "2.9.0"
+    const val gsonVersion = "2.8.9"
     const val moshiConverterVersion = "2.7.0"
-    const val loggingInterceptorVersion = "4.2.1"
+    const val scalarsConverterVersion = "2.7.0"
+    const val loggingInterceptorVersion = "4.9.0"
+    const val okhttpVersion = "4.9.2"
 
     // Room
     const val roomVersion = "2.2.5"

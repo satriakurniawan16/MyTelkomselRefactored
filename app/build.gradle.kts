@@ -1,20 +1,21 @@
 import dependencies.appDep
+import dependencies.Dependencies
 import kotlin.io.*
 import java.util.*
 import java.io.FileInputStream
 
 plugins {
-    id ("com.android.application")
-    id ("kotlin-android")
-    id ("kotlin-kapt")
-    id ("dagger.hilt.android.plugin")
-    id ("kotlin-parcelize")
+    id(Config.Plugins.androidApplication)
+    id(Config.Plugins.kotlinAndroid)
+    id(Config.Plugins.kotlinKapt)
+    id(Config.Plugins.daggerHiltPlugins)
+    id(Config.Plugins.kotlinParcelize)
 }
 
 val version = Environments.Release.appVersionName
 val buildVersion = version
 
-apply{
+apply {
     from("../shared_dependencies.kts")
 }
 
@@ -36,7 +37,7 @@ android {
         versionCode = Environments.Release.appVersionCode
         versionName = Environments.Release.appVersionName
 
-        testInstrumentationRunner =Config.testRunner
+        testInstrumentationRunner = Config.testRunner
         vectorDrawables {
             useSupportLibrary = true
         }
@@ -156,20 +157,20 @@ android {
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
-            buildConfigField ("String", "HEADER_ORIGIN_VALUE", "\"file://\"")
-            buildConfigField ("String", "HEADER_CHANNELID_VALUE", "\"UX\"")
-            buildConfigField ("boolean", "ENABLE_CRASHLYTICS", "true")
-            buildConfigField ("String", "HEADER_X_REQUESTED_VALUE", "\"com.telkomsel.mytelkomsel\"")
-            buildConfigField ("String", "APP_VERSION", "\"$version\"")
-            resValue ("string", "appVersion", buildVersion)
+            buildConfigField("String", "HEADER_ORIGIN_VALUE", "\"file://\"")
+            buildConfigField("String", "HEADER_CHANNELID_VALUE", "\"UX\"")
+            buildConfigField("boolean", "ENABLE_CRASHLYTICS", "true")
+            buildConfigField("String", "HEADER_X_REQUESTED_VALUE", "\"com.telkomsel.mytelkomsel\"")
+            buildConfigField("String", "APP_VERSION", "\"$version\"")
+            resValue("string", "appVersion", buildVersion)
         }
         getByName("debug") {
             buildConfigField("String", "HEADER_ORIGIN_VALUE", "\"file://\"")
             buildConfigField("String", "HEADER_CHANNELID_VALUE", "\"UX\"")
-            buildConfigField ("boolean", "ENABLE_CRASHLYTICS", "true")
-            buildConfigField ("String", "HEADER_X_REQUESTED_VALUE", "\"com.telkomsel.mytelkomsel\"")
-            buildConfigField ("String", "APP_VERSION", "\"$version\"")
-            resValue ("string", "appVersion", "$buildVersion-DEBUG")
+            buildConfigField("boolean", "ENABLE_CRASHLYTICS", "true")
+            buildConfigField("String", "HEADER_X_REQUESTED_VALUE", "\"com.telkomsel.mytelkomsel\"")
+            buildConfigField("String", "APP_VERSION", "\"$version\"")
+            resValue("string", "appVersion", "$buildVersion-DEBUG")
         }
     }
     compileOptions {
@@ -199,8 +200,8 @@ dependencies {
     implementation(project(":core"))
 
     // Core Dependencies
-    implementation("org.jetbrains.kotlin:kotlin-stdlib:1.7.20")
-    implementation("androidx.core:core-ktx:1.9.0")
+    implementation(Dependencies.KotlinDep.kotlin)
+    implementation(Dependencies.CoreDep.coreKtx)
 
     implementation(appDep.appCompat)
     implementation(appDep.material)
@@ -214,35 +215,34 @@ dependencies {
         implementation(it)
     }
 
-//    implementation("androidx.appcompat:appcompat:1.5.1")
-    implementation("com.google.android.material:material:1.6.1")
+    implementation("com.google.android.material:material:1.6.0")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
 
-//    const val hiltAndroid = "com.google.dagger:hilt-android:${Versions.hiltAndroidVersion}"
-//    const val hiltAndroidKapt = "com.google.dagger:hilt-compiler:${Versions.hiltAndroidVersion}"
-//    const val hiltKapt = "androidx.hilt:hilt-compiler:${Versions.hiltVersion}"
-
-    implementation("com.google.dagger:hilt-android:2.42")
-    kapt("com.google.dagger:hilt-compiler:2.42")
-    kapt("androidx.hilt:hilt-compiler:1.0.0")
+    implementation(Dependencies.DaggerHiltDep.hiltAndroid)
+    kapt(Dependencies.DaggerHiltDep.hiltCompilerKapt)
+    kapt(Dependencies.DaggerHiltDep.hiltKapt)
 
 
-
-//    androidTestImplementation("androidx.compose.ui:ui-test-junit4:1.2.1")
-
-    // When using a AppCompat theme
-//    implementation("com.google.accompanist:accompanist-appcompat-theme:0.25.1")
-
-    implementation("com.squareup.retrofit2:converter-moshi:2.7.0")
     // Coroutines
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4")
 
-//    const val coroutineAndroid =
-//        "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.coroutineAndroidVersion}"
-//    appDep.Coroutines.forEach {
-//        implementation(it)
-//    }
+
+    //Retrofit
+    appDep.retrofit.forEach {
+        implementation(it)
+    }
+
+    //Ok Http
+    appDep.okhttp.forEach {
+        implementation(it)
+    }
+
+    //Chuck
+    debugImplementation("com.github.chuckerteam.chucker:library:3.5.2")
+    releaseImplementation("com.github.chuckerteam.chucker:library-no-op:3.5.2")
+
+
     // Glide
     implementation(appDep.glide)
     kapt(appDep.glideKapt)
@@ -261,22 +261,9 @@ dependencies {
     testImplementation(appDep.Test.testExtJunit)
 
 
-    //Retrofit
-    implementation ("com.google.code.gson:gson:2.8.9")
-    implementation ("com.squareup.retrofit2:retrofit:2.9.0")
-    implementation ("com.squareup.retrofit2:converter-gson:2.9.0")
-    implementation ("com.squareup.retrofit2:converter-scalars:2.9.0")
-
-    //Ok Http
-    implementation ("com.squareup.okhttp3:logging-interceptor:4.9.0")
-    implementation ("com.squareup.okhttp3:okhttp:4.9.2")
-
-    //Chuck
-    debugImplementation ("com.github.chuckerteam.chucker:library:3.5.2")
-    releaseImplementation ("com.github.chuckerteam.chucker:library-no-op:3.5.2")
-
-    //Coroutines
-//    preproductionImplementation ("com.github.chuckerteam.chucker:library:3.5.2")
-//    productionReleaseImplementation ("com.github.chuckerteam.chucker:library-no-op:3.5.2")
+//    implementation ("com.google.code.gson:gson:2.8.9")
+//    implementation ("com.squareup.retrofit2:retrofit:2.9.0")
+//    implementation ("com.squareup.retrofit2:converter-gson:2.9.0")
+//    implementation ("com.squareup.retrofit2:converter-scalars:2.9.0")
 
 }

@@ -1,8 +1,8 @@
 package com.example.mytelkomselrefactoredapp.data.repository
 
-import com.example.mytelkomselrefactoredapp.remote.models.FaqResponseModel
+import com.example.mytelkomselrefactoredapp.data.models.FaqEntity
 
 interface WCMSRemote {
     suspend fun getAllTranslation(): String
-    suspend fun getFaq(): FaqResponseModel
+    suspend fun getFaq(): FaqEntity
 }
