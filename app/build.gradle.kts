@@ -104,7 +104,6 @@ android {
 
             getProps("./config/preprod.props").onEach { p ->
                 if (p.key.toString().startsWith("buildConfig")) {
-                    println("kontol buildConfig ${p.value.toString()}")
                     buildConfigField(
                         "String",
                         p.key.toString().replace("buildConfig.", ""),
@@ -222,11 +221,9 @@ dependencies {
     kapt(Dependencies.DaggerHiltDep.hiltCompilerKapt)
     kapt(Dependencies.DaggerHiltDep.hiltKapt)
 
-
     // Coroutines
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4")
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4")
-
+    implementation(Dependencies.CoroutinesDep.coroutineCore)
+    implementation(Dependencies.CoroutinesDep.coroutineAndroid)
 
     //Retrofit
     appDep.retrofit.forEach {

@@ -7,6 +7,12 @@ import com.example.mytelkomselrefactoredapp.BuildConfig
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 
+/**
+ * Created by Rahmad Satria Kurniawan on 12/8/2022.
+ * PT.Phincon
+ * rahmad.kurniawan@phincon.com
+ */
+
 object NetworkFactory {
 
     fun createBuilder(context : Context):OkHttpClient.Builder{

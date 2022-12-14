@@ -8,6 +8,12 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import javax.inject.Inject
 
+/**
+ * Created by Rahmad Satria Kurniawan on 12/8/2022.
+ * PT.Phincon
+ * rahmad.kurniawan@phincon.com
+ */
+
 class WCMSRepositoryImpl @Inject constructor(private val dataSourceFactory: WCMSRemoteDataSourceFactory,private val faqMapper: FaqMapper) : WCMSRepository{
     override suspend fun getAllTranslation(): Flow<String> = flow {
         emit(dataSourceFactory.getRemoteDataSource().getAllTranslation())

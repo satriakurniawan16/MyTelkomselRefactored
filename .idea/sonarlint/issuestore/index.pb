@@ -1,24 +1,12 @@
 
 @
 local.properties,0\7\0712df971a99ac4d2fccb8e0fb19f377f3374cca
-ç
-]app/src/main/java/com/example/mytelkomselrefactoredapp/presentation/utils/StatefulLiveData.kt,6\d\6d0957f5cda70666a297e408c7e677a67413ae5b
 á
 Wapp/src/main/java/com/example/mytelkomselrefactoredapp/domain/interactor/BaseUseCase.kt,6\f\6f169256df6e630b6e098dc7f10d87cef388b684
-
-Oapp/src/main/java/com/example/mytelkomselrefactoredapp/util/ExceptionHandler.kt,4\2\42480f6e153a2aa48b8a3b7ff7815c48a2db703a
-P
- app/src/main/AndroidManifest.xml,8\c\8c55c3ccc257e5907959013f99656e4c8ec3903e
-y
-Iapp/src/main/java/com/example/mytelkomselrefactoredapp/di/RemoteModule.kt,9\0\90e44b219c9cb45c15155469a48346a70f6118cf
-É
-Sapp/src/main/java/com/example/mytelkomselrefactoredapp/remote/api/ServiceFactory.kt,f\e\fe4a1ae6294f678f1c6b891f7c727a34e7120c34
 Å
 Qapp/src/main/java/com/example/mytelkomselrefactoredapp/data/models/TopicEntity.kt,c\5\c5824149768e43f266c0d14890f62f4e21337391
 
 Ocore/src/test/java/com/example/mytelkomselrefactoredapp/core/ExampleUnitTest.kt,b\c\bc76b88a8b65db028871a94623350d54ccea8af9
-K
-components/build.gradle.kts,d\9\d990e76a36b10758d689b684cacddb68f4b00204
 M
 components/consumer-rules.pro,6\3\63ed85bae64b5db70d44727f707326947672280c
 E
@@ -27,10 +15,6 @@ M
 components/proguard-rules.pro,e\a\eaaea7b9a253fc2b292a6dcb95ef9adb227efdfb
 I
 buildSrc/build.gradle.kts,d\9\d90b697280fada81e52ec92d24725920f1cb087b
-ê
-`core/src/main/java/com/example/mytelkomselrefactoredapp/core/network/MyTelkomselAuthenticator.kt,a\2\a228c37a570fb87d81cbfbe8aae9abade0a4df1d
-à
-Xcore/src/main/java/com/example/mytelkomselrefactoredapp/core/network/ApiAuthenticator.kt,4\9\493cd5bd793cdeecc272be8ffb4fc38a97ac40cf
 é
 ^core/src/androidTest/java/com/example/mytelkomselrefactoredapp/core/ExampleInstrumentedTest.kt,7\b\7b39380d9f182cff384316c827db2b8d82959cb0
 W
@@ -52,10 +36,6 @@ G
 shared_dependencies.kts,9\2\92dc3a4860a5ab1b1a4ffcd3908f929bb1541074
 F
 app/proguard-rules.pro,9\e\9e08934d811afe28fbc77aaa3c0d747b94348db9
-y
-Iapp/src/main/java/com/example/mytelkomselrefactoredapp/BaseApplication.kt,1\d\1d591a86bfe1ed1341bd272bb9d50a5bbaa2fbcb
-É
-Sapp/src/main/java/com/example/mytelkomselrefactoredapp/remote/api/NetworkFactory.kt,2\8\28e596fbea3bda57236ade46e427b26649ddecc1
 V
 &buildSrc/src/main/java/Environments.kt,7\1\718f994e7775ec3511b094d5a8c40f7f74ec0398
 K
@@ -78,8 +58,6 @@ G
 core/.gitignore,8\f\8f16fff20c9abaf19044c2da043c6677c1119e28
 G
 core/consumer-rules.pro,9\d\9df576c5d0a011f72d84e78ce1617bc4e57720d5
-E
-core/build.gradle.kts,d\7\d72846b7b418aa17de692d1ccf924c738cf8dbe5
 à
 Xapp/src/androidTest/java/com/example/mytelkomselrefactoredapp/ExampleInstrumentedTest.kt,b\0\b026c9c554bc8023746d3b617b7517f73090c3e6
 y
@@ -92,16 +70,6 @@ r
 Bcomponents/src/test/java/com/example/components/ExampleUnitTest.kt,b\f\bf50f69299ffa7c93fe40fb243d1d67ce90e38a3
 Å
 Qcomponents/src/androidTest/java/com/example/components/ExampleInstrumentedTest.kt,1\5\150bd7fd6a4f3d4a814edb00db87fe173d645093
-
-Oapp/src/main/java/com/example/mytelkomselrefactoredapp/di/PresentationModule.kt,c\d\cdf4465badccada79c5a5142541102c49af14137
-ï
-eapp/src/main/java/com/example/mytelkomselrefactoredapp/presentation/utils/CoroutineContextProvider.kt,f\f\ff6fa7fa1c9fa8bdd0d286d43a288ca42feb1c85
-ä
-Zapp/src/main/java/com/example/mytelkomselrefactoredapp/presentation/utils/LiveDataModel.kt,7\f\7fafce0e0a1f77cb8ff3003d44b3aa9af3d3e829
-è
-_app/src/main/java/com/example/mytelkomselrefactoredapp/presentation/viewmodel/StatefulResult.kt,0\c\0c05e45bb1accb2a8e419e4a7b311f0d0d5a12f3
-å
-\app/src/main/java/com/example/mytelkomselrefactoredapp/extension/LifecycleOwnerExtensions.kt,f\1\f1291542bc364bfa078d542dd490466b81622b4b
 É
 Sapp/src/main/java/com/example/mytelkomselrefactoredapp/data/models/ContentEntity.kt,1\b\1b2db3b09d62a017264a4cb7e76fae6273bfed5f
 }
@@ -118,19 +86,7 @@ Napp/src/main/java/com/example/mytelkomselrefactoredapp/domain/models/LangId.kt
 Napp/src/main/java/com/example/mytelkomselrefactoredapp/domain/models/LangEn.kt,4\8\4885d3c9605eb0dd19d51416e6107da890df3014
 Å
 Qapp/src/main/java/com/example/mytelkomselrefactoredapp/data/mapper/TopicMapper.kt,a\5\a5602fdad276b333c9ae16ad59c4d45b860c9c48
-ë
-aapp/src/main/java/com/example/mytelkomselrefactoredapp/data/source/WCMSRemoteDataSourceFactory.kt,4\6\46e0437cc70a2139991462b4b5058ff2cc4efe04
-v
-Fapp/src/main/java/com/example/mytelkomselrefactoredapp/di/AppModule.kt,8\9\8952b43345ace90746315074f8b0a0cc66e353b4
-é
-^app/src/main/java/com/example/mytelkomselrefactoredapp/presentation/viewmodel/BaseViewModel.kt,2\c\2c3f6fef91609642f00fc87d6e8a987f9bee5e02
-ï
-eapp/src/main/java/com/example/mytelkomselrefactoredapp/domain/interactor/GetAllTranslationrUseCase.kt,7\4\744a0e9a3bfe5df8f9772a0f856ea9b58d401346
 
 Oapp/src/main/java/com/example/mytelkomselrefactoredapp/data/models/FaqEntity.kt,d\0\d060e251ec825af4891ddad21af3c03a81451dc6
 Ç
 Rapp/src/main/java/com/example/mytelkomselrefactoredapp/data/models/LangEnEntity.kt,9\f\9f8729a6c008e68cb8174d0b78e175445c54fe44
-Ç
-Rapp/src/main/java/com/example/mytelkomselrefactoredapp/data/mapper/LangEnMapper.kt,a\e\ae840a79ffa70e6abd43ac2109047374ba65d4e1
-Ö
-Uapp/src/main/java/com/example/mytelkomselrefactoredapp/remote/mappers/EntityMapper.kt,8\d\8d4f7bf6b5458d4e68de12366fc9284645fdd7ed

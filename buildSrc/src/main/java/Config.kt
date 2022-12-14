@@ -23,7 +23,7 @@ object Config {
 
     object Plugins {
 
-        const val androidApplication = "com.android.application"
+        const val androidApplication = "com.android.application"   
         const val kotlinJetbrains = "org.jetbrains.kotlin.android"
         const val android = "android"
         const val kotlinExtensions = "kotlin-android-extensions"

@@ -1,3 +1,9 @@
+/**
+ * Created by Rahmad Satria Kurniawan on 12/8/2022.
+ * PT.Phincon
+ * rahmad.kurniawan@phincon.com
+ */
+
 package dependencies
 
 object appDep {

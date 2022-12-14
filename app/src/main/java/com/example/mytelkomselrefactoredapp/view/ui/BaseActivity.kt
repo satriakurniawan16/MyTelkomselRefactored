@@ -5,6 +5,12 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.mytelkomselrefactoredapp.R
 import com.example.mytelkomselrefactoredapp.presentation.viewmodel.BaseViewModel
 
+/**
+ * Created by Rahmad Satria Kurniawan on 12/8/2022.
+ * PT.Phincon
+ * rahmad.kurniawan@phincon.com
+ */
+
 abstract class BaseActivity<ViewModel: BaseViewModel> : AppCompatActivity() {
 
     protected abstract val viewModel: ViewModel

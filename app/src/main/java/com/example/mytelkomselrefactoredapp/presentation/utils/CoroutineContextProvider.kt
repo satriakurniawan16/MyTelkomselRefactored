@@ -4,6 +4,12 @@ import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
 import javax.inject.Inject
 
+/**
+ * Created by Rahmad Satria Kurniawan on 12/8/2022.
+ * PT.Phincon
+ * rahmad.kurniawan@phincon.com
+ */
+
 interface CoroutineContextProvider {
     val io: CoroutineDispatcher
     val default: CoroutineDispatcher

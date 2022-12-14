@@ -35,8 +35,8 @@ object Versions {
     const val lifeCycleRuntimeKtxVersion = "2.2.0"
 
     // Coroutines dependencies
-    const val coroutineCoreVersion = "1.3.9"
-    const val coroutineAndroidVersion = "1.3.9"
+    const val coroutineCoreVersion = "1.6.4"
+    const val coroutineAndroidVersion = "1.6.4"
 
     //Glide dependencies
     const val glideVersion = "4.11.0"

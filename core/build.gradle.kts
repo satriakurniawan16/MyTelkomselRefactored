@@ -2,10 +2,11 @@ import dependencies.appDep
 
 plugins {
     id("com.android.library")
-    kotlin("android")
-    kotlin("kapt")
-    id("kotlin-parcelize")
-//    id("dagger.hilt.android.plugin")
+    id(Config.Plugins.androidApplication)
+    id(Config.Plugins.kotlinAndroid)
+    id(Config.Plugins.kotlinKapt)
+    id(Config.Plugins.daggerHiltPlugins)
+    id(Config.Plugins.kotlinParcelize)
 }
 
 apply{

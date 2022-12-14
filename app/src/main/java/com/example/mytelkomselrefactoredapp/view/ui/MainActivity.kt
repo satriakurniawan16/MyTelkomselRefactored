@@ -1,5 +1,6 @@
 package com.example.mytelkomselrefactoredapp.view.ui
 
+
 import android.os.Bundle
 import android.util.Log
 import androidx.activity.viewModels
@@ -10,6 +11,12 @@ import com.example.mytelkomselrefactoredapp.presentation.viewmodel.BaseViewModel
 import com.example.mytelkomselrefactoredapp.presentation.viewmodel.StatefulResult
 import com.example.mytelkomselrefactoredapp.presentation.viewmodel.WCMSViewModel
 import dagger.hilt.android.AndroidEntryPoint
+
+/**
+ * Created by Rahmad Satria Kurniawan on 12/8/2022.
+ * PT.Phincon
+ * rahmad.kurniawan@phincon.com
+ */
 
 @AndroidEntryPoint
 class MainActivity : BaseActivity<BaseViewModel>() {
