@@ -2,16 +2,16 @@ package com.example.mytelkomselrefactoredapp.presentation.viewmodel
 
 import android.util.Log
 import androidx.lifecycle.LiveData
+import com.example.mytelkomselrefactoredapp.core.base.BaseViewModel
 import com.example.mytelkomselrefactoredapp.domain.interactor.GetAllTranslationUseCase
 import com.example.mytelkomselrefactoredapp.domain.interactor.GetFaqUseCase
 import com.example.mytelkomselrefactoredapp.domain.models.Faq
 import com.example.mytelkomselrefactoredapp.presentation.utils.CoroutineContextProvider
-import com.example.mytelkomselrefactoredapp.presentation.utils.StatefulLiveData
-import com.example.mytelkomselrefactoredapp.util.ExceptionHandler
+import com.example.mytelkomselrefactoredapp.core.extensions.StatefulLiveData
+import com.example.mytelkomselrefactoredapp.core.extensions.StatefulResult
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.CoroutineExceptionHandler
 import javax.inject.Inject
-import kotlinx.coroutines.flow.collect
 
 @HiltViewModel
 class WCMSViewModel @Inject constructor(

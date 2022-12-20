@@ -1,4 +1,4 @@
-package com.example.mytelkomselrefactoredapp.data.mapper
+package com.example.mytelkomselrefactoredapp.core.model
 
 interface Mapper<E, D> {
 

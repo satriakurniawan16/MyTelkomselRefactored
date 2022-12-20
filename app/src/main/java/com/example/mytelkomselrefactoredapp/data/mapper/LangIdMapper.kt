@@ -1,5 +1,6 @@
 package com.example.mytelkomselrefactoredapp.data.mapper
 
+import com.example.mytelkomselrefactoredapp.core.model.Mapper
 import com.example.mytelkomselrefactoredapp.data.models.LangIdEntity
 import com.example.mytelkomselrefactoredapp.domain.models.LangId
 import javax.inject.Inject

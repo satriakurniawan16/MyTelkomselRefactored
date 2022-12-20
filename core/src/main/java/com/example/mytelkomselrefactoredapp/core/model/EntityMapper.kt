@@ -1,4 +1,4 @@
-package com.example.mytelkomselrefactoredapp.remote.mappers
+package com.example.mytelkomselrefactoredapp.core.model
 
 interface EntityMapper<M, E> {
 

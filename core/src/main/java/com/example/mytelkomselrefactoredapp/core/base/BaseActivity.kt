@@ -1,9 +1,9 @@
-package com.example.mytelkomselrefactoredapp.view.ui
+package com.example.mytelkomselrefactoredapp.core.base
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.example.mytelkomselrefactoredapp.R
-import com.example.mytelkomselrefactoredapp.presentation.viewmodel.BaseViewModel
+import androidx.viewbinding.ViewBinding
+import com.example.mytelkomselrefactoredapp.core.R
 
 /**
  * Created by Rahmad Satria Kurniawan on 12/8/2022.
@@ -11,13 +11,19 @@ import com.example.mytelkomselrefactoredapp.presentation.viewmodel.BaseViewModel
  * rahmad.kurniawan@phincon.com
  */
 
-abstract class BaseActivity<ViewModel: BaseViewModel> : AppCompatActivity() {
+abstract class BaseActivity<VB : ViewBinding,ViewModel: BaseViewModel> : AppCompatActivity() {
 
+
+    protected lateinit var binding: VB
     protected abstract val viewModel: ViewModel
+
+
+    abstract fun getViewBinding(): VB
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = getViewBinding()
+        setContentView(binding.root)
         observerEvents()
     }
 

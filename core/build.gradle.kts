@@ -1,17 +1,17 @@
 import dependencies.appDep
+import dependencies.Dependencies
 
 plugins {
     id("com.android.library")
-    id(Config.Plugins.androidApplication)
-    id(Config.Plugins.kotlinAndroid)
-    id(Config.Plugins.kotlinKapt)
-    id(Config.Plugins.daggerHiltPlugins)
-    id(Config.Plugins.kotlinParcelize)
+    kotlin("android")
+    kotlin("kapt")
+    id("kotlin-parcelize")
+    id("dagger.hilt.android.plugin")
 }
 
-apply{
-    from("../shared_dependencies.kts")
-}
+//apply{
+//    from("../shared_dependencies.kts")
+//}
 
 android {
     compileSdkVersion(Config.Android.androidCompileSdkVersion)
@@ -50,61 +50,35 @@ android {
 
     buildFeatures {
         viewBinding = true
-//        compose = true
     }
-//
-//    composeOptions {
-//        kotlinCompilerExtensionVersion = Versions.composeVersion
-//        kotlinCompilerVersion = Versions.kotlinVersion
-//    }
 }
 
 dependencies {
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
 
+    implementation(appDep.appCompat)
 
-    implementation("org.jetbrains.kotlin:kotlin-stdlib:1.4.2")
-    implementation(appDep.constraint)
-    implementation(appDep.navigationFragmentKtx)
-    implementation(appDep.navigationUiKtx)
-    implementation(appDep.activityKtx)
+    // Core Dependencies
+    implementation(Dependencies.KotlinDep.kotlin)
+    implementation(Dependencies.CoreDep.coreKtx)
 
-    //Retrofit
-//    implementation ("com.google.code.gson:gson:2.8.9")
-//    implementation ("com.squareup.retrofit2:retrofit:2.9.0")
-//    implementation ("com.squareup.retrofit2:converter-gson:2.9.0")
-//    implementation ("com.squareup.retrofit2:converter-scalars:2.9.0")
-//
-//    //Ok Http
-//    implementation ("com.squareup.okhttp3:logging-interceptor:4.9.0")
-//    implementation ("com.squareup.okhttp3:okhttp:4.9.2")
+    // LifeCycle
+    appDep.LifeCycle.forEach {
+        implementation(it)
+    }
 
-//    // Retrofit
-//    implementation(Dependencies.RetrofitDep.loggingInterceptor)
-//    implementation(Dependencies.RetrofitDep.moshiConverter)
-//    implementation(Dependencies.RetrofitDep.retrofit)
+    //Coroutine
+    implementation(Dependencies.CoroutinesDep.coroutineCore)
+    implementation(Dependencies.CoroutinesDep.coroutineAndroid)
 
-    // Coroutines
-//    appDep.Coroutines.forEach {
-//        implementation(it)
-//    }
-    // Glide
-    implementation(appDep.glide)
-    kapt(appDep.glideKapt)
-    // Timber
-    implementation(appDep.timber)
-    // Lottie animation
-    implementation(appDep.lottie)
+    //Dagger
+    
+    implementation(Dependencies.DaggerHiltDep.hiltAndroid)
+    kapt(Dependencies.DaggerHiltDep.hiltCompilerKapt)
+    kapt(Dependencies.DaggerHiltDep.hiltKapt)
 
-    // Test Dependencies
-    testImplementation(appDep.Test.junit)
-    testImplementation(appDep.Test.assertJ)
-    testImplementation(appDep.Test.mockitoKotlin)
-    testImplementation(appDep.Test.mockitoInline)
-    testImplementation(appDep.Test.coroutines)
-    testImplementation(appDep.Test.androidxArchCore)
-    testImplementation(appDep.Test.robolectric)
-    testImplementation(appDep.Test.testExtJunit)
+
+
 }
 
 kapt {

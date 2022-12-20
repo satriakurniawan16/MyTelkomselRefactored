@@ -1,6 +1,4 @@
-package com.example.mytelkomselrefactoredapp.presentation.viewmodel
-
-import com.example.mytelkomselrefactoredapp.presentation.utils.LiveDataAwareModel
+package com.example.mytelkomselrefactoredapp.core.extensions
 
 sealed class StatefulResult<out T> : LiveDataAwareModel() {
     val succeeded

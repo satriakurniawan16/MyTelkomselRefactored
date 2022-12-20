@@ -1,4 +1,4 @@
-package com.example.mytelkomselrefactoredapp.presentation.utils
+package com.example.mytelkomselrefactoredapp.core.extensions
 
 interface LiveDataModel
 
@@ -8,6 +8,6 @@ interface LiveDataModel
  * rahmad.kurniawan@phincon.com
  */
 
-open class  LiveDataAwareModel: LiveDataModel{
+open class  LiveDataAwareModel: LiveDataModel {
     var isRedeliverd: Boolean = false
 }

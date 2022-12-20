@@ -1,4 +1,4 @@
-package com.example.mytelkomselrefactoredapp.presentation.utils
+package com.example.mytelkomselrefactoredapp.core.extensions
 
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleOwner

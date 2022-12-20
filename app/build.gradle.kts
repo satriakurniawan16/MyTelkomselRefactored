@@ -15,9 +15,9 @@ plugins {
 val version = Environments.Release.appVersionName
 val buildVersion = version
 
-apply {
-    from("../shared_dependencies.kts")
-}
+//apply {
+//    from("../shared_dependencies.kts")
+//}
 
 android {
     compileSdk = 33
@@ -46,7 +46,6 @@ android {
 
         getProps("./config/allvariant.props").onEach { p ->
             if (p.key.toString().contains("buildConfig")) {
-                println("kontol buildConfig ${p.value.toString()}")
                 buildConfigField(
                     "String",
                     p.key.toString().replace("buildConfig.", ""),
@@ -54,7 +53,6 @@ android {
                 )
             } else if (p.key.toString().contains("resValue")) {
                 resValue("string", p.key.toString().replace("resValue.", ""), p.value.toString())
-                println("kontol buildConfig ${p.value.toString()}")
             }
         }
 
@@ -77,7 +75,6 @@ android {
 
             getProps("./config/dev.props").onEach { p ->
                 if (p.key.toString().contains("buildConfig")) {
-                    println("kontol buildConfig ${p.value.toString()}")
                     buildConfigField(
                         "String",
                         p.key.toString().replace("buildConfig.", ""),
@@ -89,7 +86,6 @@ android {
                         p.key.toString().replace("resValue.", ""),
                         p.value.toString()
                     )
-                    println("kontol buildConfig ${p.value.toString()}")
                 }
             }
         }
@@ -115,7 +111,6 @@ android {
                         p.key.toString().replace("resValue.", ""),
                         p.value.toString()
                     )
-                    println("kontol buildConfig ${p.value.toString()}")
                 }
             }
         }
@@ -130,7 +125,6 @@ android {
 
             getProps("./config/prod.props").onEach { p ->
                 if (p.key.toString().contains("buildConfig")) {
-                    println("kontol buildConfig ${p.value.toString()}")
                     buildConfigField(
                         "String",
                         p.key.toString().replace("buildConfig.", ""),
@@ -221,9 +215,10 @@ dependencies {
     kapt(Dependencies.DaggerHiltDep.hiltCompilerKapt)
     kapt(Dependencies.DaggerHiltDep.hiltKapt)
 
-    // Coroutines
+    // Coroutines-----------
     implementation(Dependencies.CoroutinesDep.coroutineCore)
     implementation(Dependencies.CoroutinesDep.coroutineAndroid)
+
 
     //Retrofit
     appDep.retrofit.forEach {
@@ -256,11 +251,4 @@ dependencies {
     testImplementation(appDep.Test.androidxArchCore)
 //    testImplementation(appDep.Test.robolectric)
     testImplementation(appDep.Test.testExtJunit)
-
-
-//    implementation ("com.google.code.gson:gson:2.8.9")
-//    implementation ("com.squareup.retrofit2:retrofit:2.9.0")
-//    implementation ("com.squareup.retrofit2:converter-gson:2.9.0")
-//    implementation ("com.squareup.retrofit2:converter-scalars:2.9.0")
-
 }

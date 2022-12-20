@@ -1,12 +1,11 @@
 package com.example.mytelkomselrefactoredapp.data.mapper
 
-import com.example.mytelkomselrefactoredapp.data.models.ContentEntity
+import com.example.mytelkomselrefactoredapp.core.model.Mapper
 import com.example.mytelkomselrefactoredapp.data.models.TopicEntity
-import com.example.mytelkomselrefactoredapp.domain.models.Content
 import com.example.mytelkomselrefactoredapp.domain.models.Topic
 import javax.inject.Inject
 
-class TopicMapper @Inject constructor():Mapper<TopicEntity,Topic> {
+class TopicMapper @Inject constructor(): Mapper<TopicEntity, Topic> {
     //    override fun mapFromEntity(type: List<TopicEntity>): List<Topic> {
 //        var list: ArrayList<Topic> = arrayListOf()
 //        type.forEachIndexed { index, topicEntity ->

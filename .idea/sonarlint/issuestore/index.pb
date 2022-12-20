@@ -28,12 +28,8 @@ A
 .gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302
 ;
 gradlew.bat,2\a\2a45a911a8f1836b0b6c5b758962572012d8f8c3
-C
-settings.gradle.kts,7\4\749edfcc96398253e5b3416184e95c46621da850
 >
 app/.gitignore,5\1\51e1c5d383dfaa35e0e7e5873a0a99355a86880f
-G
-shared_dependencies.kts,9\2\92dc3a4860a5ab1b1a4ffcd3908f929bb1541074
 F
 app/proguard-rules.pro,9\e\9e08934d811afe28fbc77aaa3c0d747b94348db9
 V
@@ -76,16 +72,12 @@ Sapp/src/main/java/com/example/mytelkomselrefactoredapp/data/models/ContentEntit
 Mapp/src/main/java/com/example/mytelkomselrefactoredapp/domain/models/Topic.kt,d\d\dd9a3961a1f36d9bd2b2cb1ae947f1187c234f58
 
 Oapp/src/main/java/com/example/mytelkomselrefactoredapp/domain/models/Content.kt,3\b\3b1c662f8bf5038073427ff34fd99ec5573f6766
-|
-Lapp/src/main/java/com/example/mytelkomselrefactoredapp/data/mapper/Mapper.kt,0\2\02814fbf4863e4e0f8d4f93ee77ef69856fa8e3c
 Ç
 Rapp/src/main/java/com/example/mytelkomselrefactoredapp/data/models/LangIdEntity.kt,7\4\742ecb3e4c3d80bfd3f0e9b12f4f7f51de744a77
 ~
 Napp/src/main/java/com/example/mytelkomselrefactoredapp/domain/models/LangId.kt,1\d\1df18c63dd4eb6624cbb231f722839a17cb0a1a1
 ~
 Napp/src/main/java/com/example/mytelkomselrefactoredapp/domain/models/LangEn.kt,4\8\4885d3c9605eb0dd19d51416e6107da890df3014
-Å
-Qapp/src/main/java/com/example/mytelkomselrefactoredapp/data/mapper/TopicMapper.kt,a\5\a5602fdad276b333c9ae16ad59c4d45b860c9c48
 
 Oapp/src/main/java/com/example/mytelkomselrefactoredapp/data/models/FaqEntity.kt,d\0\d060e251ec825af4891ddad21af3c03a81451dc6
 Ç

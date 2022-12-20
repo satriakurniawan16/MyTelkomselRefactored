@@ -1,10 +1,11 @@
 package com.example.mytelkomselrefactoredapp.data.mapper
 
+import com.example.mytelkomselrefactoredapp.core.model.Mapper
 import com.example.mytelkomselrefactoredapp.data.models.ContentEntity
 import com.example.mytelkomselrefactoredapp.domain.models.Content
 import javax.inject.Inject
 
-class ContentMapper @Inject constructor() : Mapper<ContentEntity,Content>{
+class ContentMapper @Inject constructor() : Mapper<ContentEntity, Content> {
 
     //    override fun mapFromEntity(type: List<ContentEntity>): List<Content> {
 //        var list: ArrayList<Content> = arrayListOf()
